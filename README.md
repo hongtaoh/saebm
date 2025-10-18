@@ -31,6 +31,8 @@ To get `all_results.csv`, run `python3 savd_csv.py`.
 
 If to get ADNI results, run `python3 run_adni_loca.py`. Results will be found in `adni_norm_results`. 
 
+In `run_adni_loca.py`, one important parameter is the the random seed (Line 78). This was done in `notebooks/get_optimal_random_number_for_adni.ipynb`. Note that 1) For SA-EBM, we only get the random seed for conjugate priors and used that seed for MLE. A better approach is to get a separate seed for MLE, although we didn't do it here; 2) We tried multiple seeds for UCL GMM, but the results (data log likelihood) are the same; 3) DEBM did not have the utility of looking into the data log likelihood, so random seeds are irrelevant here. 
+
 To get the results on ADNI (log tranformming TAU and PTAU), in `run_adni_loca.py`:
 
     1. Change this line `OUTPUT_DIR = os.path.join(base_dir, 'adni_results')`  to `OUTPUT_DIR = os.path.join(base_dir, 'adni_log_results')`

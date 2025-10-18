@@ -1,25 +1,12 @@
-# Remove old tarball (clean start)
-rm -rf env.tar.gz
-
-
-# conda deactivate   # Exit any currently active env (safe practice)
-# conda remove --name mlhc --all -y  # Clean old env entirely
-# conda create -n mlhc python=3.9 -y  # New environment
-# conda activate mlhc
-
-# # Install conda-pack to make portable env
-# conda install -c conda-forge conda-pack -y
-
-# # Install pip-only packages
-# pip install --no-cache-dir --force-reinstall pyebm pysaebm pyyaml
-# pip install --no-cache-dir git+https://github.com/noxtoby/awkde
-# pip install --no-cache-dir git+https://github.com/ucl-pond/kde_ebm
-
+# # Remove old tarball (clean start)
+rm -rf /staging/hhao/env.tar.gz  # Remove old tarball (clean start)
 
 pip install --upgrade --no-cache-dir pysaebm 
 
 # Verify installation
 python -c "from kde_ebm import mixture_model; import kde_ebm, pyebm, pysaebm, scipy, yaml; import scipy._lib; print('✅ Dependencies OK')" 
 
-# Package the environment
-conda-pack -n mlhc --output env.tar.gz 
+# # Package the environment
+conda-pack -n jobs --output env.tar.gz 
+
+mv /home/hhao9/mlhc_sub/env.tar.gz /staging/hhao9/env.tar.gz

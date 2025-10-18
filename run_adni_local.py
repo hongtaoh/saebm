@@ -43,6 +43,7 @@ if __name__ == "__main__":
     # Number of independent optimization attempts in greedy ascent
     NStartpoints=config['NStartpoints']
     Niterations=config['Niterations']
+    N_MCMC_UCL = config['N_MCMC_UCL']
     N_MCMC=config['N_MCMC']
     # N_MCMC = 100
     N_SHUFFLE=config['N_SHUFFLE']
@@ -74,7 +75,7 @@ if __name__ == "__main__":
             thinning=1,
             skip_heatmap=False,
             skip_traceplot=False,
-            seed=42, ## 42 turns out to be the best
+            seed=3750502537, 
             save_results=True,
             save_details=True,
             save_theta_phi=True,
@@ -84,7 +85,7 @@ if __name__ == "__main__":
     #     output_dir=OUTPUT_DIR,
     #     data_matrix = data_matrix,
     #     ordered_biomarkers=ordered_biomarkers,
-    #     n_iter = N_MCMC,
+    #     n_iter = N_MCMC_UCL,
     #     greedy_n_init=NStartpoints,
     #     greedy_n_iter=Niterations,
     # )

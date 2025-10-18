@@ -38,7 +38,7 @@ def save_json(outfname:str, data:Dict):
         json.dump(data, f, indent=4, default=convert_np_types)
 
 def print_metrics(result: Dict):
-    print(f"[{result['algorithm']}] QWK: {result['quadratic_weighted_kappa']:.3f}, "
+    print(f"[{result['algorithm']}], "
           f"MAE: {result['mean_absolute_error']:.2f}, "
           f"Kendall's Tau: {result['kendalls_tau']:.3f}")
 
@@ -233,26 +233,26 @@ def run_ucl(
     result_dict = {
         'algorithm': algorithm,
         "runtime": end_time - start_time,
-        'N_MCMC': n_iter,
-        "NStartpoints": greedy_n_init,
-        "NIterations": greedy_n_iter,
+        # 'N_MCMC': n_iter,
+        # "NStartpoints": greedy_n_init,
+        # "NIterations": greedy_n_iter,
         'kendalls_tau': tau,
-        'p_value': p_value,
-        "quadratic_weighted_kappa": qwk,
+        # 'p_value': p_value,
+        # "quadratic_weighted_kappa": qwk,
         "mean_absolute_error": mae,
-        "mean_squared_error": mse,
-        "root_mean_squared_error": rmse,
-        "quadratic_weighted_kappa_diseased": qwk2,
-        "mean_absolute_error_diseased": mae2,
-        "mean_squared_error_diseased": mse2,
-        "root_mean_squared_error_diseased": rmse2,
-        'true_order': {bm: true_order_dict[bm] for bm in desired_order},
-        'ml_order': {bm: ml_order[idx]+ 1 for idx, bm in enumerate(desired_order)},
-        'ml_order_raw': ml_order,
-        "true_stages": true_stages,
-        'ml_stages': ml_stages,
-        "true_stages_diseased": true_stages_diseased,
-        "ml_stages_diseased": ml_stages_diseased
+        # "mean_squared_error": mse,
+        # "root_mean_squared_error": rmse,
+        # "quadratic_weighted_kappa_diseased": qwk2,
+        # "mean_absolute_error_diseased": mae2,
+        # "mean_squared_error_diseased": mse2,
+        # "root_mean_squared_error_diseased": rmse2,
+        # 'true_order': {bm: true_order_dict[bm] for bm in desired_order},
+        # 'ml_order': {bm: ml_order[idx]+ 1 for idx, bm in enumerate(desired_order)},
+        # 'ml_order_raw': ml_order,
+        # "true_stages": true_stages,
+        # 'ml_stages': ml_stages,
+        # "true_stages_diseased": true_stages_diseased,
+        # "ml_stages_diseased": ml_stages_diseased
     }
 
     results_json = os.path.join(results_folder, f'{fname}_results.json')
@@ -358,26 +358,26 @@ def run_debm(
     result_dict = {
         'algorithm': algorithm,
         "runtime": end_time - start_time,
-        'N_MCMC': N_MCMC,
-        "NStartpoints": NStartpoints,
-        "NIterations": Niterations,
+        # 'N_MCMC': N_MCMC,
+        # "NStartpoints": NStartpoints,
+        # "NIterations": Niterations,
         'kendalls_tau': tau,
-        'p_value': p_value,
-        "quadratic_weighted_kappa": qwk,
+        # 'p_value': p_value,
+        # "quadratic_weighted_kappa": qwk,
         "mean_absolute_error": mae,
-        "mean_squared_error": mse,
-        "root_mean_squared_error": rmse,
-        "quadratic_weighted_kappa_diseased": qwk2,
-        "mean_absolute_error_diseased": mae2,
-        "mean_squared_error_diseased": mse2,
-        "root_mean_squared_error_diseased": rmse2,
-        'true_order': {bm: true_order_dict[bm] for bm in desired_order},
-        'ml_order': {bm: ml_order[idx]+ 1 for idx, bm in enumerate(desired_order)},
-        'ml_order_raw': ml_order,
-        "true_stages": true_stages,
-        'ml_stages': ml_stages,
-        "true_stages_diseased": true_stages_diseased,
-        "ml_stages_diseased": ml_stages_diseased
+        # "mean_squared_error": mse,
+        # "root_mean_squared_error": rmse,
+        # "quadratic_weighted_kappa_diseased": qwk2,
+        # "mean_absolute_error_diseased": mae2,
+        # "mean_squared_error_diseased": mse2,
+        # "root_mean_squared_error_diseased": rmse2,
+        # 'true_order': {bm: true_order_dict[bm] for bm in desired_order},
+        # 'ml_order': {bm: ml_order[idx]+ 1 for idx, bm in enumerate(desired_order)},
+        # 'ml_order_raw': ml_order,
+        # "true_stages": true_stages,
+        # 'ml_stages': ml_stages,
+        # "true_stages_diseased": true_stages_diseased,
+        # "ml_stages_diseased": ml_stages_diseased
     }
 
     results_json = os.path.join(results_folder, f'{fname}_results.json')

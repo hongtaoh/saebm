@@ -1,6 +1,7 @@
 N_VARIANTS: 50
-NStartpoints: 10
+NStartpoints: 25
 Niterations: 1000
+N_MCMC_UCL: 10_0000
 N_MCMC: 10000
 N_SHUFFLE: 2
 BURN_IN: 500
